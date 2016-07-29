@@ -11,6 +11,7 @@
 
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/util/math_functions.hpp"
+
 #ifdef USE_LEVELDB
 #include "leveldb/db.h"
 #include "math.h"
@@ -177,31 +178,31 @@ void convert_dataset(const char* image_filename, const char* label_filename,
         datum.set_data(pixels1, db_size);  // set data
         datum.set_label(static_cast<int>(*label_i));
         datum.SerializeToString(&value);
-        snprintf(key, kMaxKeyLength, "%08d", counter);
+        _snprintf(key, kMaxKeyLength, "%08d", counter);
         db->Put(leveldb::WriteOptions(), std::string(key), value);
         counter++;
         datum.set_data(pixels2, db_size);  // set data
         datum.set_label(static_cast<int>(*label_j));
         datum.SerializeToString(&value);
-        snprintf(key, kMaxKeyLength, "%08d", counter);
+        _snprintf(key, kMaxKeyLength, "%08d", counter);
         db->Put(leveldb::WriteOptions(), std::string(key), value);
         counter++;
         datum.set_data(pixels3, db_size);  // set data
         datum.set_label(static_cast<int>(*label_k));
         datum.SerializeToString(&value);
-        snprintf(key, kMaxKeyLength, "%08d", counter);
+        _snprintf(key, kMaxKeyLength, "%08d", counter);
         db->Put(leveldb::WriteOptions(), std::string(key), value);
         counter++;
         datum.set_data(pixels4, db_size);  // set data
         datum.set_label(static_cast<int>(*label_l));
         datum.SerializeToString(&value);
-        snprintf(key, kMaxKeyLength, "%08d", counter);
+        _snprintf(key, kMaxKeyLength, "%08d", counter);
         db->Put(leveldb::WriteOptions(), std::string(key), value);
         counter++;
         datum.set_data(pixels5, db_size);  // set data
         datum.set_label(static_cast<int>(*label_m));
         datum.SerializeToString(&value);
-        snprintf(key, kMaxKeyLength, "%08d", counter);
+        _snprintf(key, kMaxKeyLength, "%08d", counter);
         db->Put(leveldb::WriteOptions(), std::string(key), value);
         counter++;
       } else {
