@@ -5,10 +5,12 @@
 // category and pose of object.
 #include <fstream>  // NOLINT(readability/streams)
 #include <string>
-#include "caffe/proto/caffe.pb.h"
-#include "caffe/util/math_functions.hpp"
+
 #include "glog/logging.h"
 #include "google/protobuf/text_format.h"
+
+#include "caffe/proto/caffe.pb.h"
+#include "caffe/util/math_functions.hpp"
 #ifdef USE_LEVELDB
 #include "leveldb/db.h"
 #include "math.h"
